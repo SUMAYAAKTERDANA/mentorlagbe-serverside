@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors({
-  origin: "http://localhost:3000", 
+  origin: ["http://localhost:3000","https://mentorlagbe-clientside-u9i8.vercel.app"], 
   credentials: true,               
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], 
   allowedHeaders: ["Content-Type", "Authorization", "Origin", "Accept"]
