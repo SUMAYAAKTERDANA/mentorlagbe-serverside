@@ -12,7 +12,7 @@ export const auth = betterAuth({
   database: mongodbAdapter(db),
   baseURL: "http://localhost:5000",
   basePath: "/api/auth",
-  trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:3000"],
+  trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:3000","https://mentorlagbe-clientside-u9i8.vercel.app"],
   emailAndPassword: { enabled: true },
   user: {
     additionalFields: {
