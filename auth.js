@@ -10,13 +10,25 @@ const db = client.db("mentorlagbe");
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),
-  baseURL: "http://localhost:5000",
+ 
+  baseURL: process.env.BETTER_AUTH_URL || "https://mentorlagbe-serverside.onrender.com",
   basePath: "/api/auth",
-  trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:3000","https://mentorlagbe-clientside-u9i8.vercel.app"],
-  emailAndPassword: { enabled: true },
+  
+  trustedOrigins: [
+   "https://mentorlagbe-clientside-u9i8.vercel.app",
+    "http://localhost:3000"
+  ],
+  emailAndPassword: { 
+    enabled: true 
+  },
   user: {
     additionalFields: {
-      role: { type: "string", required: false, defaultValue: "student", input: true },
+      role: { 
+        type: "string", 
+        required: false, 
+        defaultValue: "student", 
+        input: true 
+      },
     },
   },
   plugins: [
